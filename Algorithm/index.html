@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Marks to GPA Form</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 350px;
+      text-align: center;
+    }
+
+    .form-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 12px;
+      background: #4facfe;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .form-container button:hover {
+      background: #00c6ff;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Marks to GPA</h2>
+    <input type="number" id="marks" placeholder="Enter Marks (0-100)" min="0" max="100">
+    <button onclick="calculateGrade()">Get Result</button>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function calculateGrade() {
+      const marks = document.getElementById("marks").value;
+      let grade = "";
+      let point = "";
+
+      if (marks >= 80)      { grade = "A+"; point = 5.00;}
+      else if (marks >= 70) { grade = "A"; point = 4.00; }
+      else if (marks >= 60) { grade = "A-"; point = 3.50;}
+      else if (marks >= 50) { grade = "B"; point = 3.00; }
+      else if (marks >= 40) { grade = "C"; point = 2.00; }
+      else if (marks >= 33) { grade = "D"; point = 1.00; }
+      else { grade = "F"; point = 0.00; }
+
+      document.getElementById("result").innerHTML = 
+        `Point: <span style="color:#4facfe">${point}</span> | Grade: <span style="color:#00c6ff">${grade}</span>`;
+    }
+  </script>
+</body>
+</html>
