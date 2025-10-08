@@ -122,7 +122,7 @@ for conutry in country_capitals:
     capitals=country_capitals[conutry]
     print("capitals: ",capitals)
 
-myfrinad= {
+myfrinad={
     "child1":{
         "name": "rahman",
         "year": 2002,

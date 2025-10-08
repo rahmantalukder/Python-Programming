@@ -1,6 +1,6 @@
 age = int(input("Enter your age: "))
 
-if age> 18:
+if age >= 18:
     print("You art not a child")
 
 elif age> 18:
@@ -49,5 +49,10 @@ if mark >= 40:
         print("A+")
     elif mark >= 70:
         print("A")
+    elif mark > 60:
+        print("B+")
+    elif mark > 60:
+        print("B")
     else:
-        print(" A pai nai")
+        print("fail")
+
